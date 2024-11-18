@@ -3,9 +3,9 @@ import math
 
 
 class Vector:
-    def __init__(self, x: float, y: float) -> None:
-        self.x = round(x, 2)
-        self.y = round(y, 2)
+    def __init__(self, xxx: float, yyy: float) -> None:
+        self.x = round(xxx, 2)
+        self.y = round(yyy, 2)
 
     def __add__(self, other: Vector) -> Vector:
         return Vector(self.x + other.x, self.y + other.y)
@@ -23,9 +23,9 @@ class Vector:
                                     start_point: tuple[float, float],
                                     end_point: tuple[float, float]
                                     ) -> Vector:
-        x = end_point[0] - start_point[0]
-        y = end_point[1] - start_point[1]
-        return cls(x, y)
+        xxx = end_point[0] - start_point[0]
+        yyy = end_point[1] - start_point[1]
+        return cls(xxx, yyy)
 
     def get_length(self) -> float:
         return math.sqrt(self.x ** 2 + self.y ** 2)
@@ -59,6 +59,6 @@ class Vector:
         radians = math.radians(degrees)
         cos_theta = math.cos(radians)
         sin_theta = math.sin(radians)
-        x = self.x * cos_theta - self.y * sin_theta
-        y = self.x * sin_theta + self.y * cos_theta
-        return Vector(x, y)
+        xxx = self.x * cos_theta - self.y * sin_theta
+        yyy = self.x * sin_theta + self.y * cos_theta
+        return Vector(xxx, yyy)
